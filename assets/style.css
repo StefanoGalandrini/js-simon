@@ -1,7 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+
 *,
 *::before,
 *::after {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+}
+
+:root {
+	--color-primary: rgb(35, 30, 65);
+	--color-secondary: rgb(194, 110, 0);
+	--color-font: rgba(255, 255, 255, 0.8);
+	--color-shadow: rgb(60, 60, 120);
+	font-family: 'Open Sans', sans-serif;
+	color: var(--color-font);
+}
+
+body {
+	height: 100vh;
+	background-color: var(--color-primary);
+}
+
+h1 {
+	font-size: 2.5rem;
+	letter-spacing: 2px;
+}
+
+h2 {
+	font-weight: 400;
+}
+
+main {
+	display: flex;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+.container {
+	max-width: 1200px;
+	margin-inline: auto;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-direction: column;
+}
+
+.title {
+	text-align: center;
+	width: max-content;
+	margin-bottom: 7rem;
+	padding: 2rem 5rem;
+	border-radius: 10rem;
+	box-shadow: 0px 0px 15px 10px var(--color-shadow);
+}
+
+.timer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 800px;
+	height: 350px;
+	border-radius: 1000px;
+	box-shadow: 0px 0px 15px 10px var(--color-shadow);
+}
+
+.circle {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 750px;
+	height: 300px;
+	border-radius: 900px;
+	background-color: var(--color-secondary);
+	position: relative;
+}
+
+.circle::before {
+	content: '';
+	position: absolute;
+	width: 97%;
+	height: 95%;
+	border-radius: 900px;
+	background-color: var(--color-primary);
+}
+
+.time > span {
+	font-size: 8rem;
+	position: relative;
+}
+
+.time .separator {
+	font-size: 6rem;
+	font-weight: 300;
+	position: relative;
+	top: -1rem;
+	margin-inline: 1.5rem;
 }
