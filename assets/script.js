@@ -3,15 +3,20 @@ let hoursLeft = document.querySelector("#hours");
 let minutesLeft = document.querySelector("#minutes");
 let secondsLeft = document.querySelector("#seconds");
 
-// declaring global variables for time
-let hour;
-let mins;
-let secs;
-
 const endTime = "2023-04-28T09:30:00";
-const timeRemaining = getTimeRemaining(endTime);
 
-function getTimeRemaining(endTime) {
+hoursLeft.innerHTML = "";
+minutesLeft.innerHTML = "";
+secondsLeft.innerHTML = "";
+
+const timeRemaining = getRemaining(endTime);
+
+hoursLeft.innerHTML = `${timeRemaining[0]}`;
+minutesLeft.innerHTML = `${timeRemaining[1]}`;
+secondsLeft.innerHTML = `${timeRemaining[2]}`;
+
+// FUNCTIONS DEFINITION
+function getRemaining(endTime) {
 	const start = new Date().getTime();
 	const end = new Date(endTime).getTime();
 	const remainingTime = end - start;
