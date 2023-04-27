@@ -9,11 +9,13 @@ hoursLeft.innerHTML = "";
 minutesLeft.innerHTML = "";
 secondsLeft.innerHTML = "";
 
-const timeRemaining = getRemaining(endTime);
+const timer = setInterval(() => {
+	const timeRemaining = getRemaining(endTime);
 
-hoursLeft.innerHTML = `${timeRemaining[0]}`;
-minutesLeft.innerHTML = `${timeRemaining[1]}`;
-secondsLeft.innerHTML = `${timeRemaining[2]}`;
+	hoursLeft.innerHTML = `${timeRemaining[0]}`;
+	minutesLeft.innerHTML = `${timeRemaining[1]}`;
+	secondsLeft.innerHTML = `${timeRemaining[2]}`;
+}, 1000);
 
 // FUNCTIONS DEFINITION
 function getRemaining(endTime) {
