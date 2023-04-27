@@ -12,6 +12,7 @@ secondsLeft.innerHTML = "";
 const timer = setInterval(() => {
 	const timeRemaining = getRemaining(endTime);
 
+	console.log(timeRemaining);
 	hoursLeft.innerHTML = `${timeRemaining[0]}`;
 	minutesLeft.innerHTML = `${timeRemaining[1]}`;
 	secondsLeft.innerHTML = `${timeRemaining[2]}`;
@@ -26,5 +27,7 @@ function getRemaining(endTime) {
 	const minutes = Math.floor((remainingTime / 1000 / 60) % 60);
 	const hours = Math.floor((remainingTime / (1000 * 60 * 60)) % 24);
 
-	return [hours, minutes, seconds];
+	const numToString = (time) => time.toString().padStart(2, "0");
+
+	return [numToString(hours), numToString(minutes), numToString(seconds)];
 }
