@@ -39,6 +39,9 @@ const timer = setInterval(() => {
 		timeRemaining[2] <= 0
 	) {
 		clearInterval(timer);
+		hoursLeft.innerHTML = "00";
+		minutesLeft.innerHTML = "00";
+		secondsLeft.innerHTML = "00";
 	}
 }, 1000);
 
